@@ -18,7 +18,8 @@
 (inc 8)
 9
 
-This is a recursive process, as can be seen from the expansion and contraction of the stack. 
+This is a recursive process, as can be seen from the expansion and contraction of
+the stack. 
 
 ###### 
 
@@ -35,15 +36,25 @@ This is a recursive process, as can be seen from the expansion and contraction o
 (+ 0 9)
 9
 
-This is a linearly iterative process. The number of variables that need to be held at each step is constant. 
+This is a linearly iterative process. The number of variables that need to be held
+at each step is constant. 
 
 
 ######
 
-It's still unclear how to strategically build an iterative process with a recursive procedure. 
+It's still unclear how to strategically build an iterative process with a 
+recursive procedure. 
 
-Note that in the recursive process, the recursive procedure call is wrapped in another function (inc). In the iterative version, the recursive procedure call is the outer function and wraps the inner (inc) and (dec) functions. 
+Note that in the recursive process, the recursive procedure call is wrapped in 
+another function (inc). In the iterative version, the recursive procedure call is
+the outer function and wraps the inner (inc) and (dec) functions. 
 
-Maybe that's the clue. Because inner terms are evaluated before outer terms, the process must "hold in place" the outer terms until it can fully evaluate the inner terms -- and when these inner terms are recursive calls, the stack grows. On the other hand, when the outermost term is a recursive call, by the time it is evaluated, all the inner terms have been evaluated and are thus of constant size. 
+Maybe that's the clue. Because inner terms are evaluated before outer terms, the 
+process must "hold in place" the outer terms until it can fully evaluate the inner
+terms -- and when these inner terms are recursive calls, the stack grows. On the
+other hand, when the outermost term is a recursive call, by the time it is
+evaluated, all the inner terms have been evaluated and are thus of constant size. 
 
-Which is to say that one worthwhile clue to building and recognizing iterative processes is that the recursive call will not be called within another function. We'll see...
+Which is to say that one worthwhile clue to building and recognizing iterative 
+processes is that the recursive call will not be called within another function. 
+We'll see...
