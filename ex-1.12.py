@@ -10,6 +10,15 @@ a list was proving tricky in Scheme. Here is an implementation of the procedure 
 For fun, the third function will print the entire triangle given the number of rows.
 Not sure if there is a more idiomatic way of pulling off those ranges, since their values
 are integers to be calculated and not indexes.
+
+// Scheme Version of calculate_one //
+(define (calculate_one line place)
+  (if (or (= place line)
+          (= place 1))
+          1
+      (+ (calculate_one (- line 1) place)
+         (calculate_one (- line 1) (- place 1)))))
+
 '''
 import sys
 
