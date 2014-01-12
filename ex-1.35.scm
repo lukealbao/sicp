@@ -17,10 +17,10 @@
 
 ;; We simply run the fixed-point procedure with 
 
-(lambda (x) (+ 1 (/ 1 x))) as the argument
+(lambda (x) (+ 1 (/ 1 x))) 
 
-;; for f. Indeed, doing so returns Phi to the 5th significant decimal, as defined by the
-;; tolerance definition.
+;; as the argument for f. Indeed, doing so returns Phi to the 5th significant decimal, as 
+;; defined by the tolerance definition.
 ;;
 ;; Initially, we ran the fixed-point procedure with 2 as the argument for first-guess, since
 ;; we know that phi is the limit of the sum (1/x_i). But we get the correct answer for any
