@@ -15,7 +15,10 @@
       (try next)))) ; else test (f (f x))
   (try first-guess))
 
-;; We simply run the fixed-point procedure with (lambda (x) (+ 1 (/ 1 x))) as the argument
+;; We simply run the fixed-point procedure with 
+
+(lambda (x) (+ 1 (/ 1 x))) as the argument
+
 ;; for f. Indeed, doing so returns Phi to the 5th significant decimal, as defined by the
 ;; tolerance definition.
 ;;
