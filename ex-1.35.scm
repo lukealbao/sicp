@@ -28,8 +28,8 @@
 ;; does not significantly affect run time.
 ;;
 ;; So the fixed-point calculation does not calculate the same way that the summation calculation
-;; whose convergence it tests does. That is sum(1/x_i) does not iterate through i, because it
-;; does not rely on a specific first-guess.
+;; whose convergence it tests does. That is, it calculates sum(1/x_i), but it does not iterate 
+;; through i, because it does not rely on a specific first-guess.
 ;;
 ;; Perhaps for this reason, the lambda must be in the form of (1 + 1/x), rather than the more
 ;; generalized sum(1/x) -- because the calculation never iterates or recurses in the arithmetic
