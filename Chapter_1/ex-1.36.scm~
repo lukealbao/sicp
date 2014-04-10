@@ -1,0 +1,17 @@
+;; Exercise 1.36
+;;
+;; QUESTION A: Modify fixed-point so that it prints the sequence of its approximations using the
+;; newline and display primitives. 
+
+(define tolerance 0.00001)
+(define (fixed-point f first-guess)
+  (define (close-enough? a b)
+    (< (abs (- a b)) tolerance))
+  (define (try guess)
+    (display guess) ; for each try, print it.
+    (newline) 
+    (let ((next (f guess)))
+      (if (close-enough? next guess)
+          next
+          (try next))))
+  (try first-guess))

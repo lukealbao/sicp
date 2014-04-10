@@ -1,0 +1,7 @@
+;; Exercise 1.41 
+;;
+;; QUESTION A: Define a procedure (double) that takes a procedure of one argument and returns a
+;; procedure that applies the original procedure twice.
+
+(define (double f)
+  (f f))

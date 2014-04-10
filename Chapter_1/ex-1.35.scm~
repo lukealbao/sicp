@@ -1,0 +1,17 @@
+;; Exercise 1.35
+;; QUESTION: Show that phi is a fixed point of the transformation x: (1 + 1/x), and use
+;; this fact to compute phi using the fixed-point procedure.
+;;
+;; The fixed-point procedure is given:
+
+(define tolerance 0.00001) 
+(define (fixed-point f first-guess)
+  (define (close-enough? x y)
+    (< (abs (- x y)) tolerance))
+  (define (try guess)
+    (let ((next (f guess)))
+      (if (close-enough? next guess) ; if (f x) is close enough to x, return (f x)
+          next
+      (try next)))) ; else test (f (f x))
+  (try f first-guess))
+

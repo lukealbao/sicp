@@ -1,0 +1,17 @@
+;; Exercise 1.39
+;;
+;; Write a procedure that calculates the tangent of an angle using Lambert's fraction expansion.
+;; 
+;; x / (1 - (x^2 / 3 - (x^2 / 5 -)))
+;;
+(define (cont-frac n d k)
+  (define (f i result)
+    (if (= i 0) result
+        (f (- i 1) (/ (n i) (+ (d i) result)))))
+  (f k (/ (n 1) (+ (d 1)))))
+
+
+(define (tan-cf x k)
+  (define (n i) (if (= i 1) 
+
+  (cont-frac n d k))
